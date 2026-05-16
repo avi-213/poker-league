@@ -24,7 +24,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import ProfitHeatmap from "@/components/ProfitHeatmap";
+
 
 type Match = {
   amount: number;
@@ -409,10 +409,6 @@ export default function PlayerProfile() {
 
         <ProfitCurve matches={player.history} />
         {/* HEATMAP */}
-
-        <ProfitHeatmap
-          matches={player.history}
-        />
 
         {/* MATCH HISTORY */}
 
