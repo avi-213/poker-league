@@ -45,14 +45,35 @@ export default function LeaderboardPage() {
         {players.map((player, index) => (
           <div
             key={player.id}
-            className="bg-[#0b0b0b] border border-neutral-800 rounded-3xl p-6 flex items-center justify-between"
+            className="
+              bg-[#0b0b0b]
+              border
+              border-neutral-800
+              rounded-3xl
+              p-6
+              flex
+              items-center
+              justify-between
+              transition-all
+              duration-300
+              hover:border-yellow-400
+              hover:scale-[1.01]
+            "
           >
             <div className="flex items-center gap-6">
               <div className="text-4xl font-bold text-yellow-400 w-20">
                 #{index + 1}
               </div>
 
-              <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-yellow-400">
+              <div className="
+                relative
+                w-20
+                h-20
+                rounded-full
+                overflow-hidden
+                border-4
+                border-yellow-400
+              ">
                 <Image
                   src={player.image}
                   alt={player.name}
@@ -73,7 +94,17 @@ export default function LeaderboardPage() {
             </div>
 
             <div className="text-right">
-              <div className="text-3xl font-bold text-green-400">
+              <div
+                className={`
+                  text-3xl
+                  font-bold
+                  ${
+                    player.winnings > 0
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }
+                `}
+              >
                 ₹{player.winnings}
               </div>
 

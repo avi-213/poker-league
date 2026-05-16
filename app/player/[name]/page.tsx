@@ -226,14 +226,21 @@ export default function PlayerProfile() {
               Total Winnings
             </p>
 
-            <h2 className="
-              text-4xl
-              font-black
-              text-green-400
-              mt-4
-            ">
-              ₹{player.winnings}
-            </h2>
+            <h2
+  className={`
+    text-4xl
+    font-black
+    mt-4
+    ${
+      player.winnings >= 0
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  `}
+>
+  {player.winnings >= 0 ? "+" : ""}
+  ₹{player.winnings}
+</h2>
 
           </div>
 
@@ -312,14 +319,21 @@ export default function PlayerProfile() {
               Average Profit
             </p>
 
-            <h2 className="
-              text-4xl
-              font-black
-              text-green-400
-              mt-4
-            ">
-              ₹{avgProfit}
-            </h2>
+           <h2
+  className={`
+    text-4xl
+    font-black
+    mt-4
+    ${
+      Number(avgProfit) >= 0
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  `}
+>
+  {Number(avgProfit) >= 0 ? "+" : ""}
+  ₹{avgProfit}
+</h2>
 
           </div>
 

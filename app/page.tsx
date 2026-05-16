@@ -190,9 +190,18 @@ export default function HomePage() {
                         Total Winning
                       </span>
 
-                      <span className="font-bold">
-                        ₹{player.winnings}
-                      </span>
+                    <span
+  className={`
+    font-bold
+    ${
+      player.winnings > 0
+        ? "text-green-400"
+        : "text-red-400"
+    }
+  `}
+>
+  ₹{player.winnings}
+</span>
                     </div>
 
                     <div className="flex justify-between">
